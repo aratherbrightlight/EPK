@@ -1,0 +1,1357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Rather Bright Light // EPK</title>
+  <meta name="description" content="Electronic Press Kit for A Rather Bright Light — indie rock & punk that bends genres until they break." />
+
+  <!-- Lightbulb favicon (inline SVG so no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A1%3C/text%3E%3C/svg%3E" />
+
+  <!-- ============================================================
+       FILL-IN GUIDE
+       Search for [FILL IN] across this file to find every spot
+       you should personalize before sending this EPK out.
+       ============================================================ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --ink: #f5f1e8;
+      --hot: #ff2a6d;     /* hot pink */
+      --acid: #d4ff3a;    /* acid yellow-green */
+      --cyan: #00f0ff;    /* electric cyan */
+      --orange: #ff6b1a;  /* warning orange */
+      --paper: #f5f1e8;
+      --dim: #8a8a8a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Space Mono', ui-monospace, monospace;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.18;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0.7 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { color: var(--acid); text-decoration: underline; text-underline-offset: 4px; }
+
+    h1, h2, h3, h4 { font-family: 'Archivo Black', 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.5px; line-height: 0.9; }
+
+    /* Marquee */
+    .marquee {
+      background: var(--acid);
+      color: #000;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      overflow: hidden;
+      white-space: nowrap;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+      padding: 8px 0;
+    }
+    .marquee__track {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 28s linear infinite;
+    }
+    .marquee__track span { padding: 0 24px; }
+    .marquee__track .star { color: var(--hot); }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Top nav */
+    nav.top {
+      position: sticky; top: 0; z-index: 50;
+      background: #000; border-bottom: 2px solid var(--hot);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 18px;
+      font-family: 'Space Mono', monospace; font-size: 12px;
+      text-transform: uppercase;
+    }
+    nav.top .brand { color: var(--hot); font-weight: 700; }
+    nav.top ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 14px; }
+    nav.top a { color: var(--ink); }
+    nav.top a:hover { color: var(--acid); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 80px 24px 60px;
+      border-bottom: 4px solid var(--ink);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,42,109,0.35), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0,240,255,0.25), transparent 40%),
+        repeating-linear-gradient(45deg, #0b0b0b 0 18px, #111 18px 36px);
+      overflow: hidden;
+    }
+    .hero__kicker {
+      display: inline-block;
+      background: var(--hot); color: #000;
+      font-family: 'Archivo Black', sans-serif;
+      padding: 4px 12px; font-size: 14px; letter-spacing: 3px;
+      transform: rotate(-2deg);
+    }
+    .hero h1 {
+      font-family: 'Rubik Mono One', 'Archivo Black', sans-serif;
+      font-size: clamp(56px, 12vw, 180px);
+      margin: 18px 0 0;
+      color: var(--paper);
+      text-shadow:
+        4px 4px 0 var(--hot),
+        8px 8px 0 var(--cyan);
+      line-height: 0.85;
+    }
+    .hero__sub {
+      margin-top: 18px;
+      font-size: clamp(14px, 1.4vw, 18px);
+      max-width: 720px;
+      color: var(--ink);
+    }
+    .hero__chips {
+      margin-top: 22px;
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .chip {
+      background: transparent;
+      border: 2px solid var(--ink);
+      padding: 6px 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transform: rotate(var(--r, 0deg));
+    }
+    .chip.acid { background: var(--acid); color: #000; border-color: #000; }
+    .chip.hot { background: var(--hot); color: #000; border-color: #000; }
+    .chip.cyan { background: var(--cyan); color: #000; border-color: #000; }
+
+    .hero__cta {
+      margin-top: 28px;
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border: 2px solid var(--ink);
+      background: var(--ink); color: #000;
+      font-family: 'Archivo Black', sans-serif;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 14px;
+      transition: transform 0.1s ease;
+    }
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--hot); text-decoration: none; color: #000; }
+    .btn.ghost { background: transparent; color: var(--ink); }
+    .btn.ghost:hover { background: var(--acid); color: #000; box-shadow: 4px 4px 0 var(--cyan); }
+
+    /* Section frame */
+    section {
+      padding: 70px 24px;
+      border-bottom: 2px solid #1a1a1a;
+      position: relative;
+    }
+    section .label {
+      display: inline-block;
+      background: var(--ink); color: #000;
+      padding: 4px 10px;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    section h2 {
+      font-size: clamp(36px, 6vw, 84px);
+      margin: 0 0 30px;
+      color: var(--paper);
+    }
+    section h2 em {
+      font-style: normal;
+      color: var(--hot);
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* Stats strip */
+    .stats {
+      background: var(--paper);
+      color: #000;
+      border-top: 4px solid #000;
+      border-bottom: 4px solid #000;
+      padding: 28px 24px;
+    }
+    .stats__grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .stat {
+      border-left: 4px solid #000;
+      padding: 4px 14px;
+    }
+    .stat__num {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 40px; line-height: 1;
+    }
+    .stat__lbl {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+      margin-top: 6px;
+    }
+
+    /* Bio */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 800px) { .bio-grid { grid-template-columns: 1fr; } }
+    .bio p { font-size: 16px; line-height: 1.6; color: var(--ink); }
+    .bio p + p { margin-top: 16px; }
+    .bio-card {
+      background: #111; border: 2px solid var(--cyan);
+      padding: 22px;
+      transform: rotate(1.5deg);
+    }
+    .bio-card h3 {
+      font-family: 'Archivo Black', sans-serif;
+      color: var(--cyan); font-size: 22px; margin: 0 0 12px;
+    }
+    .bio-card__sub {
+      color: var(--hot) !important;
+      margin-top: 22px !important;
+      padding-top: 16px;
+      border-top: 1px dashed #2a2a2a;
+      font-size: 18px !important;
+    }
+    .bio-card ul { padding-left: 18px; margin: 0; }
+    .bio-card li { margin-bottom: 8px; font-size: 14px; }
+    .fun-facts li { line-height: 1.45; }
+    .fun-facts em {
+      color: var(--acid);
+      font-style: italic;
+    }
+
+    .pull {
+      font-family: 'Rubik Mono One', sans-serif;
+      font-size: clamp(22px, 3vw, 36px);
+      color: var(--acid);
+      border-left: 6px solid var(--hot);
+      padding: 6px 0 6px 18px;
+      margin: 30px 0;
+      line-height: 1.1;
+    }
+
+    /* Music section */
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    @media (max-width: 800px) { .music-grid { grid-template-columns: 1fr; } }
+
+    .music-card {
+      background: #111;
+      border: 2px solid var(--ink);
+      padding: 16px;
+      position: relative;
+    }
+    .music-card.featured {
+      border-color: var(--hot);
+      box-shadow: 8px 8px 0 var(--hot);
+      grid-column: 1 / -1;
+    }
+    .music-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px; color: var(--ink);
+    }
+    .music-card .tape {
+      position: absolute;
+      top: -12px; left: 24px;
+      background: var(--acid); color: #000;
+      padding: 4px 10px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 12px; letter-spacing: 2px;
+      transform: rotate(-3deg);
+      border: 2px solid #000;
+    }
+    .music-card iframe {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    /* Video */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border: 4px solid var(--ink);
+      box-shadow: 10px 10px 0 var(--cyan);
+      background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* Video poster (click-out to YouTube) */
+    .video-poster {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 4px solid var(--ink);
+      box-shadow: 10px 10px 0 var(--cyan);
+      background: #000;
+      overflow: hidden;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .video-poster:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 13px 13px 0 var(--hot);
+      text-decoration: none;
+    }
+    .video-poster__img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: contrast(1.05) saturate(1.1);
+      display: block;
+    }
+    .video-poster__shade {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 80%),
+        linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+    }
+    .video-poster__play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: var(--hot);
+      color: #000;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 44px;
+      font-family: 'Archivo Black', sans-serif;
+      border: 4px solid #000;
+      box-shadow: 6px 6px 0 var(--acid);
+      transition: transform 0.15s ease;
+    }
+    .video-poster:hover .video-poster__play {
+      transform: translate(-50%, -50%) scale(1.07);
+    }
+    .video-poster__tape {
+      position: absolute;
+      top: 18px; left: -10px;
+      background: var(--acid); color: #000;
+      padding: 6px 18px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 14px; letter-spacing: 2px;
+      transform: rotate(-4deg);
+      border: 2px solid #000;
+    }
+    .video-poster__cta {
+      position: absolute;
+      bottom: 16px; left: 18px; right: 18px;
+      color: var(--ink);
+      font-family: 'Archivo Black', sans-serif;
+      letter-spacing: 2px;
+      font-size: clamp(14px, 1.6vw, 20px);
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #000;
+    }
+    @media (max-width: 600px) {
+      .video-poster__play { width: 78px; height: 78px; font-size: 30px; box-shadow: 4px 4px 0 var(--acid); }
+    }
+
+    /* Photo grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .photo {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border: 2px solid var(--ink);
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--dim);
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      text-align: center;
+      padding: 14px;
+      overflow: hidden;
+    }
+    .photo:nth-child(odd) { transform: rotate(-1.5deg); }
+    .photo:nth-child(even) { transform: rotate(1.5deg); }
+    .photo::after {
+      content: "[FILL IN] photo";
+      position: absolute; bottom: 8px; right: 10px;
+      font-size: 10px; color: var(--hot);
+      letter-spacing: 1px;
+    }
+    .photo span {
+      font-family: 'Archivo Black', sans-serif;
+      color: var(--ink);
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    /* Filled photo tile (real image) */
+    .photo--filled { padding: 0; background: #000; }
+    .photo--filled::after { content: none; }
+    .photo--filled img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Press quotes */
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .quote {
+      background: var(--paper); color: #000;
+      padding: 20px;
+      position: relative;
+    }
+    .quote:nth-child(2) { transform: rotate(1deg); background: var(--acid); }
+    .quote:nth-child(3) { transform: rotate(-1.5deg); background: var(--cyan); }
+    .quote::before {
+      content: "“";
+      position: absolute;
+      top: -18px; left: 10px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 90px; line-height: 1; color: var(--hot);
+    }
+    .quote p { margin: 8px 0 12px; font-size: 16px; line-height: 1.4; }
+    .quote cite {
+      display: block;
+      font-style: normal;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 12px; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Shows */
+    .shows {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Space Mono', monospace;
+    }
+    .shows th, .shows td {
+      padding: 14px 12px;
+      text-align: left;
+      border-bottom: 1px dashed #333;
+      font-size: 14px;
+    }
+    .shows th {
+      color: var(--acid);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+    .shows tr:hover td { background: #131313; }
+    .shows .date { color: var(--hot); font-weight: 700; }
+
+    /* Tech rider */
+    .rider-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 800px) { .rider-grid { grid-template-columns: 1fr; } }
+    .rider-card {
+      background: #111;
+      border: 2px dashed var(--ink);
+      padding: 22px;
+    }
+    .rider-card h3 {
+      color: var(--orange);
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+    .rider-card ol, .rider-card ul {
+      padding-left: 20px; margin: 0;
+    }
+    .rider-card li { margin-bottom: 8px; font-size: 14px; line-height: 1.4; }
+
+    .inputs {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Space Mono', monospace;
+    }
+    .inputs th, .inputs td {
+      padding: 8px 10px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px dashed #2a2a2a;
+    }
+    .inputs th {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      border-bottom: 2px solid var(--orange);
+    }
+    .inputs td:first-child {
+      width: 40px;
+      color: var(--hot);
+      font-weight: 700;
+    }
+    .inputs .muted { color: var(--dim); font-size: 11px; }
+
+    /* Stage plot */
+    .stage {
+      margin-top: 16px;
+      background: #000;
+      border: 2px solid var(--ink);
+      padding: 18px;
+      font-family: 'Space Mono', monospace;
+      color: var(--acid);
+      font-size: 12px;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .stage-plot {
+      margin-top: 16px;
+      background: #000;
+      border: 4px solid var(--ink);
+      box-shadow: 8px 8px 0 var(--hot);
+      padding: 18px;
+    }
+    .stage-plot svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed #333;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: var(--ink);
+    }
+    .legend__item { display: inline-flex; align-items: center; gap: 8px; }
+    .dot {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+    .dot-acid   { background: var(--acid); }
+    .dot-pink   { background: var(--hot); }
+    .dot-cyan   { background: var(--cyan); }
+    .dot-orange { background: var(--orange); }
+    .dot-dim    { background: var(--dim); }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-card {
+      background: var(--hot);
+      color: #000;
+      padding: 28px;
+      transform: rotate(-1deg);
+    }
+    .contact-card.alt { background: var(--cyan); transform: rotate(1deg); }
+    .contact-card h3 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 28px; margin: 0 0 10px;
+    }
+    .contact-card p { margin: 6px 0; font-size: 16px; }
+    .contact-card a { color: #000; font-weight: 700; text-decoration: underline; }
+
+    /* Socials grid */
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .social {
+      display: block;
+      padding: 22px 18px;
+      border: 2px solid var(--ink);
+      background: #0f0f0f;
+      color: var(--ink);
+      text-align: center;
+      font-family: 'Archivo Black', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.15s ease;
+    }
+    .social:hover {
+      background: var(--acid);
+      color: #000;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 var(--hot);
+      text-decoration: none;
+    }
+    .social .handle { display: block; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--dim); margin-top: 6px; letter-spacing: 1px; }
+    .social:hover .handle { color: #000; }
+
+    /* Footer */
+    footer.foot {
+      padding: 50px 24px;
+      background: #000;
+      color: var(--dim);
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    footer.foot strong { color: var(--hot); }
+
+    /* Helpers */
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute; left: 0; top: 0;
+      width: 100%;
+    }
+    .glitch::before { color: var(--hot); transform: translate(2px, 0); mix-blend-mode: screen; opacity: 0.7; }
+    .glitch::after { color: var(--cyan); transform: translate(-2px, 0); mix-blend-mode: screen; opacity: 0.7; }
+
+    .placeholder {
+      color: var(--orange);
+      background: rgba(255,107,26,0.1);
+      padding: 0 4px;
+      border-bottom: 1px dashed var(--orange);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="top">
+    <div class="brand">// A.R.B.L. EPK</div>
+    <ul>
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#live">Live</a></li>
+      <li><a href="#press">Press</a></li>
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#rider">Tech</a></li>
+      <li><a href="#contact">Booking</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero__kicker">EST. ~2020 // INDIE ROCK / PUNK</span>
+    <h1 class="glitch" data-text="A RATHER BRIGHT LIGHT">A RATHER BRIGHT LIGHT</h1>
+    <p class="hero__sub">
+      Loud-quiet-loud lifers blending indie rock, punk and whatever else fits in the van.
+      Hooks that bite, choruses that don't apologize, and a live show built to leave a mark.
+      <span class="placeholder">[FILL IN one-line tagline / mission statement]</span>
+    </p>
+
+    <div class="hero__chips">
+      <span class="chip hot" style="--r:-2deg">INDIE ROCK</span>
+      <span class="chip acid" style="--r:1.5deg">PUNK</span>
+      <span class="chip cyan" style="--r:-1deg">EMO-ADJACENT</span>
+      <span class="chip" style="--r:2deg">HOOK-FORWARD</span>
+      <span class="chip" style="--r:-1deg">ST. LOUIS, MO</span>
+    </div>
+
+    <div class="hero__cta">
+      <a class="btn" href="https://open.spotify.com/artist/43a6ANXeZ5lTWmdBCJIegl" target="_blank" rel="noopener">▶ Listen on Spotify</a>
+      <a class="btn ghost" href="#contact">📩 Book the band</a>
+      <a class="btn ghost" href="https://www.youtube.com/watch?v=A-Qw2G5gC8k" target="_blank" rel="noopener">🎥 Watch us live</a>
+    </div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>★ NEW SINGLE OUT NOW &mdash; "NO IDEA" ★</span>
+      <span class="star">★</span>
+      <span>NOW BOOKING ALL OF 2026 + BEYOND ★</span>
+      <span class="star">★</span>
+      <span>"THE LONG AWAITED" LP — STREAMING EVERYWHERE ★</span>
+      <span class="star">★</span>
+      <span>A RATHER BRIGHT LIGHT // INDIE ROCK / PUNK ★</span>
+      <span class="star">★</span>
+      <!-- duplicate for seamless scroll -->
+      <span>★ NEW SINGLE OUT NOW &mdash; "NO IDEA" ★</span>
+      <span class="star">★</span>
+      <span>NOW BOOKING ALL OF 2026 + BEYOND ★</span>
+      <span class="star">★</span>
+      <span>"THE LONG AWAITED" LP — STREAMING EVERYWHERE ★</span>
+      <span class="star">★</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats__grid">
+      <div class="stat">
+        <div class="stat__num">2</div>
+        <div class="stat__lbl">Full-length albums</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">1</div>
+        <div class="stat__lbl">Single (and counting)</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">50+</div>
+        <div class="stat__lbl">Live shows played</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">[#]</div>
+        <div class="stat__lbl">[FILL IN] streams to date</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">2026</div>
+        <div class="stat__lbl">Latest release "NO IDEA"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIO -->
+  <section id="bio">
+    <div class="container">
+      <span class="label">01 // BIO</span>
+      <h2>Who the hell is <em>A Rather Bright Light?</em></h2>
+
+      <div class="bio-grid">
+        <div class="bio">
+          <p>
+            <strong>A Rather Bright Light</strong> is a <strong>St. Louis, MO</strong>-based
+            indie rock and punk band that doesn't really care about the lines between genres.
+            Equal parts singalong indie, urgent post-punk and basement-show energy, the band
+            has been carving out their own corner of the scene since 2020.
+          </p>
+          <p>
+            Across three full-length records — <em>Every Day Is Progress</em> (2020),
+            <em>The Long Awaited</em> (2022), and the new single <em>"NO IDEA"</em> (2026) —
+            the group has sharpened a sound that's as comfortable on a packed club stage as it is
+            on late-night headphones. Expect distorted hooks, gut-punch lyrics and a rhythm
+            section that refuses to sit still.
+          </p>
+          <p class="placeholder">
+            [FILL IN: 1–2 sentences on the story / origin / lineup. Who started it? What changed
+            recently? Any defining moment, tour, or release that shaped the current era of the band?]
+          </p>
+
+          <div class="pull">"[FILL IN the one sentence you want every booker / journalist to walk away with.]"</div>
+
+          <p class="placeholder">
+            [SHORT BIO &lt; 60 words — useful for radio / festival programs.<br>
+             LONG BIO &lt; 250 words — useful for press features.<br>
+             Drop both versions here so they're easy to copy/paste.]
+          </p>
+        </div>
+
+        <aside class="bio-card">
+          <h3>// FAST FACTS</h3>
+          <ul>
+            <li><strong>Members:</strong> Mason (guitar / lead vocals), Weston (drums / hype man), Scotty (bass / vocals), Carter (keyboards / vocals)</li>
+            <li><strong>From:</strong> St. Louis, MO</li>
+            <li><strong>For fans of:</strong> fireworks, thunderstorms, birds singing, whisper screaming, science experiments</li>
+            <li><strong>Latest release:</strong> "NO IDEA" — Single, 2026</li>
+            <li><strong>Discography:</strong> The Long Awaited (2022), Every Day Is Progress (2020)</li>
+            <li><strong>Label:</strong> Tunnel Vision Records (self-produced)</li>
+            <li><strong>Management:</strong> Self- &amp; community-managed</li>
+            <li><strong>Booking:</strong> Weston Heatherly (drums) &mdash; <a href="mailto:arblband@gmail.com">arblband@gmail.com</a> &middot; 618.550.0229</li>
+            <li><strong>Press &amp; licensing:</strong> Mason Friesner &mdash; <a href="mailto:arblband@gmail.com">arblband@gmail.com</a> &middot; 618.979.2593</li>
+          </ul>
+
+          <h3 class="bio-card__sub">// FUN FACTS</h3>
+          <ul class="fun-facts">
+            <li>Mason &amp; Weston have been playing music together since <em>middle school</em>.</li>
+            <li>Carter &amp; Mason are <em>brothers</em>.</li>
+            <li>Scotty is a closeted comedian (don't tell him we told you).</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section id="music">
+    <div class="container">
+      <span class="label">02 // LISTEN</span>
+      <h2>Press play. <em>Loudly.</em></h2>
+
+      <div class="music-grid">
+        <!-- FEATURED: NO IDEA -->
+        <div class="music-card featured">
+          <span class="tape">★ NEW SINGLE</span>
+          <h3>NO IDEA <span style="color: var(--dim); font-size: 14px;">// 2026</span></h3>
+          <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/7jyVGbeFFHA2WihW9z4S8h?utm_source=generator&theme=0"
+            height="152"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <!-- DEEP CUTS -->
+        <div class="music-card">
+          <h3>Snakes <span style="color: var(--dim); font-size: 14px;">// The Long Awaited (2022)</span></h3>
+          <iframe
+            src="https://open.spotify.com/embed/track/08aWa1Tu3vYuxf2XZKqvr4?utm_source=generator&theme=0"
+            height="152"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="music-card">
+          <h3>Spiderweb <span style="color: var(--dim); font-size: 14px;">// The Long Awaited (2022)</span></h3>
+          <iframe
+            src="https://open.spotify.com/embed/track/00xgSKyE7uwi2ie1Lcq1p4?utm_source=generator&theme=0"
+            height="152"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="music-card">
+          <h3>Ending <span style="color: var(--dim); font-size: 14px;">// The Long Awaited (2022)</span></h3>
+          <iframe
+            src="https://open.spotify.com/embed/track/0c4zz0m5qEGYPabENozf7F?utm_source=generator&theme=0"
+            height="152"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="music-card">
+          <h3>The Hunt <span style="color: var(--dim); font-size: 14px;">// The Long Awaited (2022)</span></h3>
+          <iframe
+            src="https://open.spotify.com/embed/track/2BkexLa5o2hHTcauFHAVSx?utm_source=generator&theme=0"
+            height="152"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <p style="margin-top: 26px; font-size: 14px; color: var(--dim);">
+        Full catalog →
+        <a href="https://open.spotify.com/artist/43a6ANXeZ5lTWmdBCJIegl" target="_blank" rel="noopener">Spotify</a> ·
+        <a href="https://music.apple.com/us/artist/a-rather-bright-light/1520824166" target="_blank" rel="noopener">Apple Music</a> ·
+        <a href="https://aratherbrightlight.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a> ·
+        <a href="https://www.youtube.com/channel/UCHOpAKiWwcyoygnDrYt9Hvw" target="_blank" rel="noopener">YouTube</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- LIVE VIDEO -->
+  <section id="live">
+    <div class="container">
+      <span class="label">03 // LIVE</span>
+      <h2>The <em>real</em> reason you're here.</h2>
+
+      <p style="max-width: 720px; color: var(--ink); margin-bottom: 24px;">
+        Full live performance, captured this year. No edits, no overdubs &mdash; just the band
+        at full volume. Recorded at <strong>Pop's Nightclub and Concert Venue</strong>, Sauget, IL.
+      </p>
+
+      <a class="video-poster"
+         href="https://www.youtube.com/watch?v=A-Qw2G5gC8k"
+         target="_blank" rel="noopener"
+         aria-label="Watch A Rather Bright Light live on YouTube">
+        <img class="video-poster__img"
+             src="https://img.youtube.com/vi/A-Qw2G5gC8k/maxresdefault.jpg"
+             onerror="this.onerror=null;this.src='https://img.youtube.com/vi/A-Qw2G5gC8k/hqdefault.jpg';"
+             alt="A Rather Bright Light live performance thumbnail" />
+        <span class="video-poster__shade"></span>
+        <span class="video-poster__play" aria-hidden="true">▶</span>
+        <span class="video-poster__tape">★ LIVE // 2026</span>
+        <span class="video-poster__cta">Watch full set on YouTube ↗</span>
+      </a>
+
+      <p style="margin-top: 18px; font-size: 14px; color: var(--dim);">
+        Embed disabled by the venue's upload &mdash; click the poster to watch on YouTube.
+        Need a clip pack for promo?
+        <a href="#contact">Email us</a> &mdash; we'll send raw footage, B-roll and live photos.
+      </p>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section id="photos">
+    <div class="container">
+      <span class="label">04 // PHOTOS</span>
+      <h2>Hi-res, <em>print-ready</em>, no excuses.</h2>
+
+      <p style="max-width: 720px; color: var(--ink); margin-bottom: 24px;">
+        Drop your high-resolution band photos in the grid below. Replace each
+        <span class="placeholder">[FILL IN]</span> tile with an
+        <code>&lt;img src="..."&gt;</code> &mdash; 4:5 portrait works best.
+        Need them as a download bundle?
+        <a href="#" class="placeholder">[FILL IN Dropbox / Drive link to press photos]</a>.
+      </p>
+
+      <div class="photo-grid">
+        <div class="photo photo--filled">
+          <img src="photos/band-01.jpg" alt="A Rather Bright Light — band photo" />
+        </div>
+        <div class="photo"><span>BAND // 02</span></div>
+        <div class="photo"><span>LIVE // 01</span></div>
+        <div class="photo"><span>LIVE // 02</span></div>
+        <div class="photo"><span>PORTRAIT</span></div>
+        <div class="photo"><span>ALBUM ART</span></div>
+      </div>
+
+      <p style="margin-top: 18px; font-size: 12px; color: var(--dim);">
+        Photo credit:
+        <span class="placeholder">[FILL IN photographer name(s) + IG handles]</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section id="press">
+    <div class="container">
+      <span class="label">05 // PRESS</span>
+      <h2>What people <em>actually</em> said.</h2>
+
+      <div class="quotes">
+        <blockquote class="quote">
+          <p>"Four score and seven years ago, I should've started a band like this instead."</p>
+          <cite>— Abraham Lincoln, probably</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"I went deaf for a reason &mdash; turn it up anyway."</p>
+          <cite>— Ludwig van Beethoven, c. 1824</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"Hands down the best band I've heard at this Schnucks parking lot all year."</p>
+          <cite>— Some guy named Greg, South City</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"That's it. That's the rock. I quit."</p>
+          <cite>— Wolfgang Amadeus Mozart, allegedly</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"My Uber driver played them on the way to the airport. I missed my flight on purpose."</p>
+          <cite>— A woman who only gave her name as "Linda"</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"I asked for the moon &mdash; they handed me a Telecaster instead. Better deal."</p>
+          <cite>— Cleopatra VII, Queen of the Ptolemaic Kingdom</cite>
+        </blockquote>
+      </div>
+
+      <h3 style="color: var(--ink); margin-top: 50px; font-size: 22px;">// Features &amp; interviews</h3>
+      <ul style="line-height: 1.9; color: var(--ink); font-size: 14px;">
+        <li>
+          <a href="https://youtu.be/HPQep_CtMfU?si=SsSHsnSsv4_12fBa" target="_blank" rel="noopener">
+            Radio interview &mdash; Wes Heatherly &amp; Mason Friesner
+          </a>
+          &mdash; St. Louis local radio, 2026
+        </li>
+        <li>
+          <a href="#" class="placeholder">[FILL IN article title]</a>
+          &mdash; [FILL IN Outlet], [FILL IN Date]
+        </li>
+        <li>
+          <a href="#" class="placeholder">[FILL IN blog / review]</a>
+          &mdash; [FILL IN Outlet], [FILL IN Date]
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SHOWS -->
+  <section id="shows">
+    <div class="container">
+      <span class="label">06 // SHOWS</span>
+      <h2>We've played <em>some places.</em></h2>
+
+      <h3 style="color: var(--acid); font-size: 22px; margin-bottom: 12px;">UPCOMING</h3>
+      <table class="shows">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>City</th>
+            <th>Venue</th>
+            <th>With</th>
+            <th>Tickets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="date">[MM/DD]</td>
+            <td>[FILL IN city]</td>
+            <td>[FILL IN venue]</td>
+            <td>[FILL IN support / headliner]</td>
+            <td><a href="#" class="placeholder">[Tickets]</a></td>
+          </tr>
+          <tr>
+            <td class="date">[MM/DD]</td>
+            <td>[FILL IN city]</td>
+            <td>[FILL IN venue]</td>
+            <td>[FILL IN support / headliner]</td>
+            <td><a href="#" class="placeholder">[Tickets]</a></td>
+          </tr>
+          <tr>
+            <td class="date">[MM/DD]</td>
+            <td>[FILL IN city]</td>
+            <td>[FILL IN venue]</td>
+            <td>[FILL IN support / headliner]</td>
+            <td><a href="#" class="placeholder">[Tickets]</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: var(--cyan); font-size: 22px; margin: 40px 0 12px;">SELECT PAST SHOWS</h3>
+      <table class="shows">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>City</th>
+            <th>Venue</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="date">[YYYY]</td>
+            <td>[FILL IN city]</td>
+            <td>[FILL IN venue]</td>
+            <td>[FILL IN — sold out / opened for / festival slot / approx attendance]</td>
+          </tr>
+          <tr>
+            <td class="date">[YYYY]</td>
+            <td>[FILL IN city]</td>
+            <td>[FILL IN venue]</td>
+            <td>[FILL IN — sold out / opened for / festival slot / approx attendance]</td>
+          </tr>
+          <tr>
+            <td class="date">[YYYY]</td>
+            <td>[FILL IN city]</td>
+            <td>[FILL IN venue]</td>
+            <td>[FILL IN — sold out / opened for / festival slot / approx attendance]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TECH RIDER + STAGE PLOT -->
+  <section id="rider">
+    <div class="container">
+      <span class="label">07 // TECH</span>
+      <h2>Stage plot &amp; <em>rider.</em></h2>
+
+      <div class="rider-grid">
+        <div class="rider-card">
+          <h3>// INPUT LIST</h3>
+          <table class="inputs">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Input</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Guitar Vocals</td></tr>
+              <tr><td>2</td><td>Bass Vocals</td></tr>
+              <tr><td>3</td><td>Keyboard Vocals</td></tr>
+              <tr><td>4</td><td>Guitar Amp</td></tr>
+              <tr><td>5</td><td>Bass Amp <span class="muted">(Direct In optional)</span></td></tr>
+              <tr><td>6</td><td>Keyboard <span class="muted">(Direct In)</span></td></tr>
+              <tr><td>7</td><td>Synthesizer <span class="muted">(Direct In)</span></td></tr>
+              <tr><td>8</td><td>Kick</td></tr>
+              <tr><td>9</td><td>Snare</td></tr>
+              <tr><td>10</td><td>Tom 1</td></tr>
+              <tr><td>11</td><td>Tom 2</td></tr>
+              <tr><td>12</td><td>Hi-Hat</td></tr>
+              <tr><td>13</td><td>Overhead L</td></tr>
+              <tr><td>14</td><td>Overhead R</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rider-card">
+          <h3>// BACKLINE / ASKS</h3>
+          <ul>
+            <li><strong>Drums:</strong> [FILL IN — kit size / cymbals provided / shared OK?]</li>
+            <li><strong>Bass amp:</strong> [FILL IN make/model preferences + acceptable subs]</li>
+            <li><strong>Guitar amp(s):</strong> [FILL IN]</li>
+            <li><strong>Monitors:</strong> [FILL IN — # of mixes + IEM or wedges]</li>
+            <li><strong>Power:</strong> [FILL IN # of stage outlets needed]</li>
+            <li><strong>Set length:</strong> [FILL IN — typical 30 / 45 / 60 min]</li>
+            <li><strong>Load-in:</strong> [FILL IN typical needs]</li>
+            <li><strong>Hospitality:</strong> [FILL IN — water on stage, green room, meal buyout, etc.]</li>
+            <li><strong>Merch:</strong> One 6ft table + chair, please.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="color: var(--ink); margin-top: 32px; font-size: 22px;">// STAGE PLOT</h3>
+
+      <div class="stage-plot">
+        <svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Rather Bright Light stage plot">
+          <!-- Stage area -->
+          <rect x="20" y="20" width="960" height="580" fill="#0f0f0f" stroke="#f5f1e8" stroke-width="3" />
+
+          <!-- Back of stage banner -->
+          <rect x="20" y="20" width="960" height="36" fill="#f5f1e8" />
+          <text x="500" y="45" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="18" fill="#000" letter-spacing="4">BACK OF STAGE</text>
+
+          <!-- Front of stage banner -->
+          <rect x="20" y="564" width="960" height="36" fill="#ff2a6d" />
+          <text x="500" y="589" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="18" fill="#000" letter-spacing="4">FRONT OF STAGE / AUDIENCE</text>
+
+          <!-- ===== CENTER-BACK: DRUMS (Wes BEHIND the kit) =====
+               Layout (top to bottom = back of stage to audience):
+                 Wes (drummer)
+                   |
+                 SN  (snare in front of drummer)
+                   |
+                 T1  T2  (rack toms mounted, between snare & kick)
+                   |
+                  KICK   (front of kit, closest to audience)
+               Hi-hat sits at snare level, off to drummer's side.
+          -->
+          <g>
+            <rect x="375" y="75" width="250" height="270" fill="#141414" stroke="#f5f1e8" stroke-width="2" stroke-dasharray="6,5" />
+            <text x="500" y="95" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#8a8a8a" letter-spacing="2">DRUM RISER (if avail.)</text>
+
+            <!-- Wes — behind the kit, scooted forward toward the kit -->
+            <circle cx="500" cy="148" r="30" fill="#0f0f0f" stroke="#d4ff3a" stroke-width="3" />
+            <text x="500" y="144" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#d4ff3a">WES</text>
+            <text x="500" y="161" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#d4ff3a" letter-spacing="1">DRUMS</text>
+
+            <!-- Hi-hat — off to one side, at snare level -->
+            <circle cx="430" cy="200" r="15" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
+            <text x="430" y="204" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">HH</text>
+
+            <!-- Snare — in front of Wes -->
+            <circle cx="485" cy="200" r="20" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
+            <text x="485" y="204" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">SN</text>
+
+            <!-- Tom 1 — between snare and kick (mounted above kick) -->
+            <circle cx="490" cy="250" r="16" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
+            <text x="490" y="254" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">T1</text>
+
+            <!-- Tom 2 — next to T1 -->
+            <circle cx="525" cy="250" r="16" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
+            <text x="525" y="254" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">T2</text>
+
+            <!-- Kick — front of kit, biggest -->
+            <circle cx="505" cy="305" r="30" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="3" />
+            <text x="505" y="310" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#ff2a6d">KICK</text>
+          </g>
+
+          <!-- ===== AMPS (stage-right side, side-by-side, scooted forward) ===== -->
+          <g>
+            <!-- Bass amp -->
+            <rect x="75" y="220" width="130" height="72" fill="#1a1a1a" stroke="#ff6b1a" stroke-width="3" />
+            <text x="140" y="250" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="14" fill="#ff6b1a">BASS</text>
+            <text x="140" y="270" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="14" fill="#ff6b1a">AMP</text>
+            <text x="140" y="312" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#8a8a8a">DI optional</text>
+
+            <!-- Guitar amp (next to bass amp) -->
+            <rect x="220" y="220" width="130" height="72" fill="#1a1a1a" stroke="#ff6b1a" stroke-width="3" />
+            <text x="285" y="250" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="14" fill="#ff6b1a">GTR</text>
+            <text x="285" y="270" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="14" fill="#ff6b1a">AMP</text>
+          </g>
+
+          <!-- ===== STAGE RIGHT: BASS + VOCALS (Scotty) ===== -->
+          <g>
+            <circle cx="180" cy="475" r="42" fill="#0f0f0f" stroke="#d4ff3a" stroke-width="3" />
+            <line x1="180" y1="433" x2="180" y2="412" stroke="#d4ff3a" stroke-width="3" />
+            <circle cx="180" cy="408" r="6" fill="#d4ff3a" />
+            <text x="180" y="471" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#d4ff3a">SCOTTY</text>
+            <text x="180" y="488" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#d4ff3a" letter-spacing="1">BASS + VOX</text>
+          </g>
+
+          <!-- ===== CENTER-LEFT: GUITAR + LEAD VOCALS (Mason) ===== -->
+          <g>
+            <circle cx="400" cy="475" r="44" fill="#0f0f0f" stroke="#d4ff3a" stroke-width="3" />
+            <line x1="400" y1="431" x2="400" y2="410" stroke="#d4ff3a" stroke-width="3" />
+            <circle cx="400" cy="406" r="6" fill="#d4ff3a" />
+            <text x="400" y="468" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#d4ff3a">MASON</text>
+            <text x="400" y="484" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#d4ff3a" letter-spacing="1">GUITAR</text>
+            <text x="400" y="498" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#d4ff3a" letter-spacing="1">+ LEAD VOX</text>
+          </g>
+
+          <!-- ===== KEYS + VOCALS (Carter) =====
+               Keyboard rig sits IN FRONT of Carter, then the whole rig
+               (and Carter's facing direction) is rotated 45° around
+               Carter so he naturally faces the audience + drums. -->
+          <g>
+            <!-- Carter -->
+            <circle cx="800" cy="370" r="42" fill="#0f0f0f" stroke="#d4ff3a" stroke-width="3" />
+            <text x="800" y="366" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#d4ff3a">CARTER</text>
+            <text x="800" y="383" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#d4ff3a" letter-spacing="1">KEYS + VOX</text>
+
+            <!-- Keyboard rig (and Carter's mic) rotated 45° around Carter (CW visually,
+                 which swings the rig from "south of Carter" to "south-west of Carter",
+                 i.e. toward the drums + audience). Authoring frame keeps the rig
+                 directly south of Carter so it's easy to read in source. -->
+            <g transform="rotate(45 800 370)">
+              <!-- Mic stand (Carter's vocal mic, in front of him along the same diagonal) -->
+              <line x1="800" y1="412" x2="800" y2="432" stroke="#d4ff3a" stroke-width="3" />
+              <circle cx="800" cy="436" r="6" fill="#d4ff3a" />
+
+              <!-- Keyboard (closer to Carter) -->
+              <rect x="710" y="455" width="180" height="32" rx="3" fill="#1a1a1a" stroke="#00f0ff" stroke-width="2.5" />
+              <text x="800" y="476" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="14" fill="#00f0ff">KEYBOARD</text>
+
+              <!-- Synth (further toward audience) -->
+              <rect x="710" y="492" width="180" height="32" rx="3" fill="#1a1a1a" stroke="#00f0ff" stroke-width="2.5" />
+              <text x="800" y="513" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="14" fill="#00f0ff">SYNTH</text>
+
+              <text x="800" y="540" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#8a8a8a" letter-spacing="1">DI x2 → FOH</text>
+            </g>
+          </g>
+
+          <!-- Stage left / right markers (audience-perspective convention:
+               audience's left = band's stage right, and vice versa). -->
+          <g font-family="Space Mono, monospace" font-size="11" fill="#8a8a8a" letter-spacing="2">
+            <text x="40" y="500" transform="rotate(-90 40 500)" text-anchor="middle">STAGE RIGHT</text>
+            <text x="960" y="500" transform="rotate(90 960 500)" text-anchor="middle">STAGE LEFT</text>
+          </g>
+        </svg>
+
+        <!-- Legend -->
+        <div class="legend">
+          <span class="legend__item"><span class="dot dot-acid"></span> Band member</span>
+          <span class="legend__item"><span class="dot dot-pink"></span> Drum kit</span>
+          <span class="legend__item"><span class="dot dot-cyan"></span> Keyboard / synth</span>
+          <span class="legend__item"><span class="dot dot-orange"></span> Amps</span>
+          <span class="legend__item"><span class="dot dot-dim"></span> DI / FOH note</span>
+        </div>
+      </div>
+
+      <p style="margin-top: 14px; font-size: 13px; color: var(--dim);">
+        Need a downloadable PDF version of the rider + stage plot?
+        <a href="#" class="placeholder">[FILL IN PDF link]</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <span class="label">08 // BOOK US</span>
+      <h2>Let's <em>make a mess.</em></h2>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>BOOKING</h3>
+          <p><strong>Weston Heatherly</strong></p>
+          <p>📩 <a href="mailto:arblband@gmail.com">arblband@gmail.com</a></p>
+          <p>📞 <a href="tel:+16185500229">618.550.0229</a></p>
+          <p style="margin-top: 14px; font-size: 13px;">
+            Best for: shows, festivals, tour support, private events.
+          </p>
+        </div>
+
+        <div class="contact-card alt">
+          <h3>PRESS &amp; LICENSING</h3>
+          <p><strong>Mason Friesner</strong></p>
+          <p>📩 <a href="mailto:arblband@gmail.com">arblband@gmail.com</a></p>
+          <p>📞 <a href="tel:+16189792593">618.979.2593</a></p>
+          <p style="margin-top: 14px; font-size: 13px;">
+            Best for: interviews, premieres, sync &amp; licensing requests, photo &amp; logo packs.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="color: var(--acid); font-size: 22px; margin: 40px 0 14px;">// FOLLOW / STREAM</h3>
+      <div class="socials">
+        <a class="social" href="https://open.spotify.com/artist/43a6ANXeZ5lTWmdBCJIegl" target="_blank" rel="noopener">
+          Spotify <span class="handle">A Rather Bright Light</span>
+        </a>
+        <a class="social" href="https://www.instagram.com/aratherbrightlight/" target="_blank" rel="noopener">
+          Instagram <span class="handle">@aratherbrightlight</span>
+        </a>
+        <a class="social" href="https://www.facebook.com/ARatherBrightLight/" target="_blank" rel="noopener">
+          Facebook <span class="handle">/ARatherBrightLight</span>
+        </a>
+        <a class="social" href="https://www.youtube.com/channel/UCHOpAKiWwcyoygnDrYt9Hvw" target="_blank" rel="noopener">
+          YouTube <span class="handle">A Rather Bright Light</span>
+        </a>
+        <a class="social" href="https://aratherbrightlight.bandcamp.com" target="_blank" rel="noopener">
+          Bandcamp <span class="handle">aratherbrightlight</span>
+        </a>
+        <a class="social" href="#" target="_blank" rel="noopener">
+          TikTok <span class="handle placeholder">[FILL IN handle]</span>
+        </a>
+        <a class="social" href="https://music.apple.com/us/artist/a-rather-bright-light/1520824166" target="_blank" rel="noopener">
+          Apple Music <span class="handle">A Rather Bright Light</span>
+        </a>
+        <a class="social" href="mailto:[FILL IN mailing list signup]">
+          Mailing list <span class="handle placeholder">[FILL IN signup link]</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <p>
+      <strong>A RATHER BRIGHT LIGHT</strong> &nbsp;//&nbsp;
+      EPK © 2026 &nbsp;//&nbsp;
+      <a href="#contact">say hi</a>
+    </p>
+    <p style="margin-top: 8px; opacity: 0.6;">
+      Built loud. Stay loud.
+    </p>
+  </footer>
+
+</body>
+</html>
