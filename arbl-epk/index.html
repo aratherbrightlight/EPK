@@ -448,16 +448,30 @@
       background: var(--paper); color: #000;
       padding: 20px;
       position: relative;
+      transform: rotate(-1deg);
     }
-    .quote:nth-child(2) { transform: rotate(1deg); background: var(--acid); }
-    .quote:nth-child(3) { transform: rotate(-1.5deg); background: var(--cyan); }
+    .quote:nth-child(1) { transform: rotate(-1.5deg); background: var(--paper); }
+    .quote:nth-child(2) { transform: rotate(1deg);    background: var(--acid); }
+    .quote:nth-child(3) { transform: rotate(-1deg);   background: var(--cyan); }
+    .quote:nth-child(4) { transform: rotate(1.5deg);  background: var(--hot); }
+    .quote:nth-child(5) { transform: rotate(-1deg);   background: var(--orange); }
+    .quote:nth-child(6) { transform: rotate(1deg);    background: var(--paper); border: 3px dashed var(--hot); }
+
     .quote::before {
       content: "“";
       position: absolute;
       top: -18px; left: 10px;
       font-family: 'Archivo Black', sans-serif;
-      font-size: 90px; line-height: 1; color: var(--hot);
+      font-size: 90px; line-height: 1;
+      color: var(--hot);
     }
+    /* Tape-style quote-mark recolor so it pops against each background */
+    .quote:nth-child(1)::before { color: var(--hot); }
+    .quote:nth-child(2)::before { color: var(--hot); }
+    .quote:nth-child(3)::before { color: var(--hot); }
+    .quote:nth-child(4)::before { color: var(--acid); }
+    .quote:nth-child(5)::before { color: #000; }
+    .quote:nth-child(6)::before { color: var(--cyan); }
     .quote p { margin: 8px 0 12px; font-size: 16px; line-height: 1.4; }
     .quote cite {
       display: block;
@@ -689,9 +703,8 @@
     <span class="hero__kicker">EST. ~2020 // INDIE ROCK / PUNK</span>
     <h1 class="glitch" data-text="A RATHER BRIGHT LIGHT">A RATHER BRIGHT LIGHT</h1>
     <p class="hero__sub">
-      Loud-quiet-loud lifers blending indie rock, punk and whatever else fits in the van.
-      Hooks that bite, choruses that don't apologize, and a live show built to leave a mark.
-      <span class="placeholder">[FILL IN one-line tagline / mission statement]</span>
+      Loud-quiet-loud lifers blending indie rock, punk and whatever else fits in the hatchback.
+      Hooks that bite and a live show built to leave a mark.
     </p>
 
     <div class="hero__chips">
@@ -746,8 +759,8 @@
         <div class="stat__lbl">Live shows played</div>
       </div>
       <div class="stat">
-        <div class="stat__num">[#]</div>
-        <div class="stat__lbl">[FILL IN] streams to date</div>
+        <div class="stat__num">1k+</div>
+        <div class="stat__lbl">Streams to date</div>
       </div>
       <div class="stat">
         <div class="stat__num">2026</div>
@@ -765,30 +778,33 @@
       <div class="bio-grid">
         <div class="bio">
           <p>
-            <strong>A Rather Bright Light</strong> is a <strong>St. Louis, MO</strong>-based
+            We're <strong>A Rather Bright Light</strong> &mdash; a <strong>St. Louis, MO</strong>-based
             indie rock and punk band that doesn't really care about the lines between genres.
-            Equal parts singalong indie, urgent post-punk and basement-show energy, the band
-            has been carving out their own corner of the scene since 2020.
+            Equal parts singalong indie, midwest emo and basement-show energy, we've been
+            carving out our own corner of the scene since 2020.
           </p>
           <p>
-            Across three full-length records — <em>Every Day Is Progress</em> (2020),
-            <em>The Long Awaited</em> (2022), and the new single <em>"NO IDEA"</em> (2026) —
-            the group has sharpened a sound that's as comfortable on a packed club stage as it is
-            on late-night headphones. Expect distorted hooks, gut-punch lyrics and a rhythm
-            section that refuses to sit still.
+            Across two full-length records &mdash; <em>Every Day Is Progress</em> (2020) and
+            <em>The Long Awaited</em> (2022) &mdash; plus the new single <em>"NO IDEA"</em> (2026)
+            and a third LP currently in the works, we've sharpened a sound that's as comfortable
+            on a packed club stage as it is on late-night headphones. Expect distorted hooks
+            and a rhythm section that refuses to sit still.
           </p>
-          <p class="placeholder">
-            [FILL IN: 1–2 sentences on the story / origin / lineup. Who started it? What changed
-            recently? Any defining moment, tour, or release that shaped the current era of the band?]
+          <p>
+            Wes and Mason founded the band in 2020, picked up Scotty in 2021, and added
+            Carter in 2024. With every member our sound has evolved, and now we're writing
+            music we only dreamed of. And yes, we will play that show.
           </p>
 
-          <div class="pull">"[FILL IN the one sentence you want every booker / journalist to walk away with.]"</div>
+          <div class="pull">"Every show, every time &mdash; we send people home beaming."</div>
 
+          <!-- Short / long bio block hidden by request — un-comment to restore
           <p class="placeholder">
             [SHORT BIO &lt; 60 words — useful for radio / festival programs.<br>
              LONG BIO &lt; 250 words — useful for press features.<br>
              Drop both versions here so they're easy to copy/paste.]
           </p>
+          -->
         </div>
 
         <aside class="bio-card">
@@ -887,7 +903,9 @@
         Full catalog →
         <a href="https://open.spotify.com/artist/43a6ANXeZ5lTWmdBCJIegl" target="_blank" rel="noopener">Spotify</a> ·
         <a href="https://music.apple.com/us/artist/a-rather-bright-light/1520824166" target="_blank" rel="noopener">Apple Music</a> ·
+        <!-- Bandcamp hidden by request — un-comment to restore
         <a href="https://aratherbrightlight.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a> ·
+        -->
         <a href="https://www.youtube.com/channel/UCHOpAKiWwcyoygnDrYt9Hvw" target="_blank" rel="noopener">YouTube</a>
       </p>
     </div>
@@ -933,27 +951,35 @@
       <h2>Hi-res, <em>print-ready</em>, no excuses.</h2>
 
       <p style="max-width: 720px; color: var(--ink); margin-bottom: 24px;">
-        Drop your high-resolution band photos in the grid below. Replace each
-        <span class="placeholder">[FILL IN]</span> tile with an
-        <code>&lt;img src="..."&gt;</code> &mdash; 4:5 portrait works best.
-        Need them as a download bundle?
-        <a href="#" class="placeholder">[FILL IN Dropbox / Drive link to press photos]</a>.
+        Need the full press-photo bundle (hi-res, print-ready)?
+        <a href="https://drive.google.com/drive/folders/1YXpwejPBIuc-AVDYu7QchH8op-GuWxhL" target="_blank" rel="noopener">
+          Google Drive folder ↗
+        </a>
       </p>
 
       <div class="photo-grid">
         <div class="photo photo--filled">
-          <img src="photos/band-01.jpg" alt="A Rather Bright Light — band photo" />
+          <img src="photos/band-glow.jpg" alt="A Rather Bright Light — band group, warm glow" />
         </div>
-        <div class="photo"><span>BAND // 02</span></div>
-        <div class="photo"><span>LIVE // 01</span></div>
-        <div class="photo"><span>LIVE // 02</span></div>
-        <div class="photo"><span>PORTRAIT</span></div>
-        <div class="photo"><span>ALBUM ART</span></div>
+        <div class="photo photo--filled">
+          <img src="photos/band-porch.jpg" alt="A Rather Bright Light — band on porch" />
+        </div>
+        <div class="photo photo--filled">
+          <img src="photos/band-haze.jpg" alt="A Rather Bright Light — band portrait, colored haze" />
+        </div>
+        <div class="photo photo--filled">
+          <img src="photos/band-floor.jpg" alt="A Rather Bright Light — overhead band portrait" />
+        </div>
+        <div class="photo photo--filled">
+          <img src="photos/live-drums.jpg" alt="Wes performing live on drums" />
+        </div>
+        <div class="photo photo--filled">
+          <img src="photos/radio.jpg" alt="A Rather Bright Light on local radio" />
+        </div>
       </div>
 
       <p style="margin-top: 18px; font-size: 12px; color: var(--dim);">
-        Photo credit:
-        <span class="placeholder">[FILL IN photographer name(s) + IG handles]</span>.
+        Photo credits: <strong>Alex Todd</strong> &amp; <strong>Kevin Thoele</strong>.
       </p>
     </div>
   </section>
@@ -966,28 +992,28 @@
 
       <div class="quotes">
         <blockquote class="quote">
-          <p>"Four score and seven years ago, I should've started a band like this instead."</p>
-          <cite>— Abraham Lincoln, probably</cite>
+          <p>"You'd be one of the only bands I'd fly to see."</p>
+          <cite>— Mike Wassef, Later Days</cite>
         </blockquote>
         <blockquote class="quote">
-          <p>"I went deaf for a reason &mdash; turn it up anyway."</p>
-          <cite>— Ludwig van Beethoven, c. 1824</cite>
+          <p>"This band blew me away… one of my favorite music discoveries of the year so far."</p>
+          <cite>— Brian TB Preuss</cite>
         </blockquote>
         <blockquote class="quote">
-          <p>"Hands down the best band I've heard at this Schnucks parking lot all year."</p>
-          <cite>— Some guy named Greg, South City</cite>
+          <p>"This band f*cks."</p>
+          <cite>— Katie Murphy, previous proprietor of Pink Pit</cite>
         </blockquote>
         <blockquote class="quote">
-          <p>"That's it. That's the rock. I quit."</p>
-          <cite>— Wolfgang Amadeus Mozart, allegedly</cite>
+          <p>"i love this song aaaa!!! what a good way to start my morning!"</p>
+          <cite>— Jonni Sever</cite>
         </blockquote>
         <blockquote class="quote">
-          <p>"My Uber driver played them on the way to the airport. I missed my flight on purpose."</p>
-          <cite>— A woman who only gave her name as "Linda"</cite>
+          <p>"I played NO IDEA for my class and now they ask to listen to it every day!"</p>
+          <cite>— Theresa Marlin, local 4th grade teacher</cite>
         </blockquote>
         <blockquote class="quote">
-          <p>"I asked for the moon &mdash; they handed me a Telecaster instead. Better deal."</p>
-          <cite>— Cleopatra VII, Queen of the Ptolemaic Kingdom</cite>
+          <p>"The band's music and live performances are worth checking out."</p>
+          <cite>— Meta AI</cite>
         </blockquote>
       </div>
 
@@ -999,6 +1025,7 @@
           </a>
           &mdash; St. Louis local radio, 2026
         </li>
+        <!-- Unused interview/blog slots hidden by request — un-comment to restore
         <li>
           <a href="#" class="placeholder">[FILL IN article title]</a>
           &mdash; [FILL IN Outlet], [FILL IN Date]
@@ -1007,6 +1034,7 @@
           <a href="#" class="placeholder">[FILL IN blog / review]</a>
           &mdash; [FILL IN Outlet], [FILL IN Date]
         </li>
+        -->
       </ul>
     </div>
   </section>
@@ -1017,6 +1045,7 @@
       <span class="label">06 // SHOWS</span>
       <h2>We've played <em>some places.</em></h2>
 
+      <!-- Upcoming Shows table hidden by request — un-comment to restore
       <h3 style="color: var(--acid); font-size: 22px; margin-bottom: 12px;">UPCOMING</h3>
       <table class="shows">
         <thead>
@@ -1052,8 +1081,9 @@
           </tr>
         </tbody>
       </table>
+      -->
 
-      <h3 style="color: var(--cyan); font-size: 22px; margin: 40px 0 12px;">SELECT PAST SHOWS</h3>
+      <h3 style="color: var(--cyan); font-size: 22px; margin-top: 0; margin-bottom: 12px;">SELECT PAST SHOWS</h3>
       <table class="shows">
         <thead>
           <tr>
@@ -1125,15 +1155,12 @@
         <div class="rider-card">
           <h3>// BACKLINE / ASKS</h3>
           <ul>
-            <li><strong>Drums:</strong> [FILL IN — kit size / cymbals provided / shared OK?]</li>
-            <li><strong>Bass amp:</strong> [FILL IN make/model preferences + acceptable subs]</li>
-            <li><strong>Guitar amp(s):</strong> [FILL IN]</li>
-            <li><strong>Monitors:</strong> [FILL IN — # of mixes + IEM or wedges]</li>
-            <li><strong>Power:</strong> [FILL IN # of stage outlets needed]</li>
-            <li><strong>Set length:</strong> [FILL IN — typical 30 / 45 / 60 min]</li>
-            <li><strong>Load-in:</strong> [FILL IN typical needs]</li>
-            <li><strong>Hospitality:</strong> [FILL IN — water on stage, green room, meal buyout, etc.]</li>
-            <li><strong>Merch:</strong> One 6ft table + chair, please.</li>
+            <li><strong>Drums:</strong> SJC kick, snare, high tom, low tom, hi-hat, 1 ride, 2 crash, 1 china</li>
+            <li><strong>Bass amp:</strong> Fender Rumble 500</li>
+            <li><strong>Guitar amp:</strong> 2x12 Fender DeVille</li>
+            <li><strong>Keyboards:</strong> Yamaha MX-88, ASM Hydrasynth</li>
+            <li><strong>Sharing:</strong> We're happy to share any &amp; all of our equipment with other bands as needed.</li>
+            <li><strong>Merch:</strong> One 6ft table + chair, please &mdash; we can provide if none available.</li>
           </ul>
         </div>
       </div>
@@ -1153,45 +1180,15 @@
           <rect x="20" y="564" width="960" height="36" fill="#ff2a6d" />
           <text x="500" y="589" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="18" fill="#000" letter-spacing="4">FRONT OF STAGE / AUDIENCE</text>
 
-          <!-- ===== CENTER-BACK: DRUMS (Wes BEHIND the kit) =====
-               Layout (top to bottom = back of stage to audience):
-                 Wes (drummer)
-                   |
-                 SN  (snare in front of drummer)
-                   |
-                 T1  T2  (rack toms mounted, between snare & kick)
-                   |
-                  KICK   (front of kit, closest to audience)
-               Hi-hat sits at snare level, off to drummer's side.
-          -->
+          <!-- ===== CENTER-BACK: DRUMS (Wes centered in the riser) ===== -->
           <g>
             <rect x="375" y="75" width="250" height="270" fill="#141414" stroke="#f5f1e8" stroke-width="2" stroke-dasharray="6,5" />
             <text x="500" y="95" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#8a8a8a" letter-spacing="2">DRUM RISER (if avail.)</text>
 
-            <!-- Wes — behind the kit, scooted forward toward the kit -->
-            <circle cx="500" cy="148" r="30" fill="#0f0f0f" stroke="#d4ff3a" stroke-width="3" />
-            <text x="500" y="144" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#d4ff3a">WES</text>
-            <text x="500" y="161" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#d4ff3a" letter-spacing="1">DRUMS</text>
-
-            <!-- Hi-hat — off to one side, at snare level -->
-            <circle cx="430" cy="200" r="15" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
-            <text x="430" y="204" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">HH</text>
-
-            <!-- Snare — in front of Wes -->
-            <circle cx="485" cy="200" r="20" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
-            <text x="485" y="204" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">SN</text>
-
-            <!-- Tom 1 — between snare and kick (mounted above kick) -->
-            <circle cx="490" cy="250" r="16" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
-            <text x="490" y="254" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">T1</text>
-
-            <!-- Tom 2 — next to T1 -->
-            <circle cx="525" cy="250" r="16" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="2.5" />
-            <text x="525" y="254" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#ff2a6d">T2</text>
-
-            <!-- Kick — front of kit, biggest -->
-            <circle cx="505" cy="305" r="30" fill="#0f0f0f" stroke="#ff2a6d" stroke-width="3" />
-            <text x="505" y="310" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#ff2a6d">KICK</text>
+            <!-- Wes — centered in the riser -->
+            <circle cx="500" cy="210" r="42" fill="#0f0f0f" stroke="#d4ff3a" stroke-width="3" />
+            <text x="500" y="206" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#d4ff3a">WES</text>
+            <text x="500" y="223" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#d4ff3a" letter-spacing="1">DRUMS</text>
           </g>
 
           <!-- ===== AMPS (stage-right side, side-by-side, scooted forward) ===== -->
@@ -1269,7 +1266,6 @@
         <!-- Legend -->
         <div class="legend">
           <span class="legend__item"><span class="dot dot-acid"></span> Band member</span>
-          <span class="legend__item"><span class="dot dot-pink"></span> Drum kit</span>
           <span class="legend__item"><span class="dot dot-cyan"></span> Keyboard / synth</span>
           <span class="legend__item"><span class="dot dot-orange"></span> Amps</span>
           <span class="legend__item"><span class="dot dot-dim"></span> DI / FOH note</span>
@@ -1325,18 +1321,21 @@
         <a class="social" href="https://www.youtube.com/channel/UCHOpAKiWwcyoygnDrYt9Hvw" target="_blank" rel="noopener">
           YouTube <span class="handle">A Rather Bright Light</span>
         </a>
+        <a class="social" href="https://music.apple.com/us/artist/a-rather-bright-light/1520824166" target="_blank" rel="noopener">
+          Apple Music <span class="handle">A Rather Bright Light</span>
+        </a>
+        <!-- Bandcamp / TikTok / Mailing list hidden by request — un-comment to restore
         <a class="social" href="https://aratherbrightlight.bandcamp.com" target="_blank" rel="noopener">
           Bandcamp <span class="handle">aratherbrightlight</span>
         </a>
         <a class="social" href="#" target="_blank" rel="noopener">
           TikTok <span class="handle placeholder">[FILL IN handle]</span>
         </a>
-        <a class="social" href="https://music.apple.com/us/artist/a-rather-bright-light/1520824166" target="_blank" rel="noopener">
-          Apple Music <span class="handle">A Rather Bright Light</span>
-        </a>
         <a class="social" href="mailto:[FILL IN mailing list signup]">
           Mailing list <span class="handle placeholder">[FILL IN signup link]</span>
         </a>
+        -->
+        
       </div>
     </div>
   </section>
